@@ -79,10 +79,10 @@ graph TD
     API -- Audio --> S3[Amazon S3]
     API -- Audio --> ASR[Bhashini ASR]
     ASR -- Text --> Agent[LangGraph Agent]
-    Agent -- Prompt --> Bedrock[Amazon Bedrock (Claude)]
-    Bedrock -- JSON Entities --> DB[(DynamoDB State)]
+    Agent -- Prompt --> Bedrock["Amazon Bedrock (Claude)"]
+    Bedrock -- JSON Entities --> DB[("DynamoDB State")]
     
-    subgraph Action Loop
+    subgraph ActionLoop ["Action Loop"]
         DB -- Complete Data --> PW[Playwright Bot]
         PW -- Fill Form --> Web[Target Govt Portal]
         Web -- Screenshot --> PW
